@@ -9,5 +9,6 @@ namespace MotionDetector.UWP.Model
     public class MotionEvent
     {
         public int RoomNumber { get; set; } = 1;
+        public string ImageAnalyzisResult { get; set; }
     }
 }

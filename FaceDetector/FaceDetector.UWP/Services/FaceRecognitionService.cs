@@ -13,7 +13,7 @@ namespace MotionDetector.UWP.Services
     {
         public FaceRecognitionService()
         {
-            FaceServiceClient = new FaceServiceClient("<<Cognitive services API Key>>", "https://westcentralus.api.cognitive.microsoft.com/face/v1.0");
+            FaceServiceClient = new FaceServiceClient("<<API Key here>>", "https://westcentralus.api.cognitive.microsoft.com/face/v1.0");
         }
 
         public FaceServiceClient FaceServiceClient { get; }

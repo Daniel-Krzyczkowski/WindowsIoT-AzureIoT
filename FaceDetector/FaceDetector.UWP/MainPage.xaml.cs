@@ -1,4 +1,5 @@
 ﻿using Microsoft.ProjectOxford.Face;
+using MotionDetector.UWP.Model;
 using MotionDetector.UWP.Services;
 using System;
 using System.IO;
@@ -35,7 +36,7 @@ namespace MotionDetector.UWP
             this.InitializeComponent();
             this.InitializeComponent();
 
-            //InitAzureIoTHub();
+            InitAzureIoTHub();
         }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
@@ -54,8 +55,10 @@ namespace MotionDetector.UWP
             await _mediaCapture.StartPreviewAsync();
         }
 
-        private async Task CaptureAndAnalyzePhoto()
+        private async Task<string> CaptureAndAnalyzePhoto()
         {
+            string analysisResult = string.Empty;
+
             using (var captureStream = new InMemoryRandomAccessStream())
             {
                 await _mediaCapture.CapturePhotoToStreamAsync(ImageEncodingProperties.CreateJpeg(), captureStream);
@@ -81,6 +84,7 @@ namespace MotionDetector.UWP
                     if (faces.Length > 0)
                     {
                         textPlaceHolder.Text = "Detected gender: " + faces[0].FaceAttributes?.Gender + " with accessories: " + faces[0].FaceAttributes?.Accessories[0].Type;
+                        analysisResult = analysisResult + textPlaceHolder.Text + "\n";
 
                         var faceRects = faces.Select(face => face.FaceRectangle);
                         var fRectangles = faceRects.ToArray();
@@ -109,11 +113,15 @@ namespace MotionDetector.UWP
                     stream = await GetImageStream();
                     var recognitionResult = await _faceRecognitionService.VerifyFaceAgainstTraindedGroup("myfamilytest", stream);
                     textPlaceHolder.Text = recognitionResult;
+                    analysisResult = analysisResult + recognitionResult;
+                    return analysisResult;
                 }
-                catch(FaceAPIException ex)
+                catch (FaceAPIException ex)
                 {
                     textPlaceHolder.Text = "Unfortunately error occured: " + ex.Message;
                 }
+
+                return analysisResult;
             }
         }
 
@@ -149,13 +157,13 @@ namespace MotionDetector.UWP
             if (args.Edge == GpioPinEdge.RisingEdge)
             {
                 System.Diagnostics.Debug.WriteLine("MOTION DETECTED");
-                await _azureIoTHubService.SendDataToAzure(new MotionEvent());
 
                 await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                 async () =>
                  {
                      textPlaceHolder.Text = "MOTION DETECTED";
-                     await CaptureAndAnalyzePhoto();
+                     var analyzisResult = await CaptureAndAnalyzePhoto();
+                     await SendImageWithAnalysis(analyzisResult);
                  });
             }
 
@@ -168,6 +176,18 @@ namespace MotionDetector.UWP
                      textPlaceHolder.Text = "NO MOTION DETECTED";
                  });
             }
+        }
+
+        private async Task SendImageWithAnalysis(string analyzisResult)
+        {
+            var personPicture = await GetImageStream();
+            var motionEvent = new MotionEvent
+            {
+                RoomNumber = 1,
+                ImageAnalyzisResult = analyzisResult
+            };
+            await _azureIoTHubService.SendImageToAzure(personPicture);
+            await _azureIoTHubService.SendDataToAzure(motionEvent);
         }
     }
 }

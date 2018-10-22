@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace MotionDetector.UWP.Services
 
         public AzureIoTHubService()
         {
-            _deviceClient = DeviceClient.CreateFromConnectionString("<<Azure IoT Hub Connection String>>", TransportType.Http1);
+            _deviceClient = DeviceClient.CreateFromConnectionString("<<Connection string here>>", TransportType.Http1);
         }
 
         public async Task<bool> SendDataToAzure(MotionEvent motionEvent)
@@ -28,6 +29,11 @@ namespace MotionDetector.UWP.Services
 
             Debug.WriteLine("{0} > Sending telemetry: {1}", DateTime.Now, messageString);
             return true;
+        }
+
+        public async Task SendImageToAzure(Stream imageStream)
+        {
+            await _deviceClient.UploadToBlobAsync($"Person_{DateTime.Now}.jpg", imageStream);
         }
     }
 }
