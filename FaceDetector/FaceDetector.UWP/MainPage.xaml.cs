@@ -83,7 +83,12 @@ namespace MotionDetector.UWP
                     var faces = await _faceRecognitionService.FaceServiceClient.DetectAsync(stream, false, false, new FaceAttributeType[2] { FaceAttributeType.Accessories, FaceAttributeType.Gender });
                     if (faces.Length > 0)
                     {
-                        textPlaceHolder.Text = "Detected gender: " + faces[0].FaceAttributes?.Gender + " with accessories: " + faces[0].FaceAttributes?.Accessories[0].Type;
+                        textPlaceHolder.Text = "Detected gender: " + faces[0].FaceAttributes?.Gender;
+                        if (faces[0].FaceAttributes?.Accessories.Length > 1)
+                        {
+                            textPlaceHolder.Text = textPlaceHolder.Text + " with accessories: " + faces[0].FaceAttributes?.Accessories.FirstOrDefault();
+                        }
+                        
                         analysisResult = analysisResult + textPlaceHolder.Text + "\n";
 
                         var faceRects = faces.Select(face => face.FaceRectangle);
