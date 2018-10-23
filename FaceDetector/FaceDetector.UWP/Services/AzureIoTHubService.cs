@@ -33,7 +33,7 @@ namespace MotionDetector.UWP.Services
 
         public async Task SendImageToAzure(Stream imageStream)
         {
-            await _deviceClient.UploadToBlobAsync($"Person_{DateTime.Now}.jpg", imageStream);
+            await _deviceClient.UploadToBlobAsync($"Person.jpg", imageStream);
         }
     }
 }
