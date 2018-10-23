@@ -3,7 +3,7 @@
   <Identity Name="e764f629-fdbc-4d3a-80f6-aefd5c9b4896" Publisher="CN=DevIsland" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="e764f629-fdbc-4d3a-80f6-aefd5c9b4896" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>MotionDetector.UWP</DisplayName>
+    <DisplayName>FaceDetector.UWP</DisplayName>
     <PublisherDisplayName>DevIsland</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
