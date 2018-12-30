@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="AzureTruckIoT.SensorsApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AzureTruckIoT.SensorsApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="214*"/>
+            <ColumnDefinition Width="339*"/>
+            <ColumnDefinition Width="214*"/>
+        </Grid.ColumnDefinitions>
+        <controls:RadialGauge x:Name="PressureGaugeControl" Value="0" Minimum="0" Margin="10"
+	    Maximum="1000000" TickSpacing="100" ScaleWidth="20" Unit="Pa" TickBrush="#FF1566BF"
+	    ScaleTickBrush="#FF2198C4"
+	    NeedleWidth="5" TickLength="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Foreground="White"/>
+        <controls:RadialGauge x:Name="TemperatureGaugeControl" Value="0" Minimum="0" Margin="10" 
+	    Maximum="60" TickSpacing="1" ScaleWidth="20" Unit="°C" TickBrush="#FF1566BF"
+	    ScaleTickBrush="#FF2198C4" 
+	    NeedleWidth="5" TickLength="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Foreground="White"/>
+        <controls:RadialGauge x:Name="AltitudeGaugeControl" Value="0" Minimum="-1000" Margin="10"
+	    Maximum="3000" TickSpacing="100" ScaleWidth="20" Unit="M" TickBrush="#FF1566BF"
+	    ScaleTickBrush="#FF2198C4"
+	    NeedleWidth="5" TickLength="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Foreground="White"/>
+        <StackPanel Grid.Column="1" Grid.Row="0" Margin="5">
+            <Canvas Name="FacePreviewCanvas" Grid.Column="1" Grid.Row="0" Background="Gray" Visibility="Visible"
+                    Width ="200" Height="200" Margin="6">
+                <CaptureElement x:Name="facePreviewElement" Visibility="Visible" Width ="200" Height="200"/>
+            </Canvas>
+            <TextBlock Text="MVP DETECTOR:" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" Margin="0, 10, 0, 0"/>
+            <TextBlock Text=" Daniel" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" Margin="0, 10, 0, 0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="0" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Ellipse x:Name="RgbLedEllipse" Fill="DarkGray" Stroke="White" Width="200" Height="200" Margin="10"/>
+            <TextBlock Text="COLOR DETECTOR:" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0, 10, 0, 0" Foreground="White"/>
+            <TextBlock Text="Azure blue" x:Name="ColorDetectedTextBlock" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0, 10, 0, 0" Foreground="White"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center">
+            <TextBlock Text="AZURE TRUCK IoT" FontSize="34" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    FontStyle="Italic"  Margin="0,0,0,20" Foreground="White"/>
+            <Image Width="200" Height="200" FocusVisualPrimaryBrush="{x:Null}" Source="/Assets/Azure.png" Stretch="Uniform"/>
+        </StackPanel>
+    </Grid>
+</Page>
