@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="AzureIoT.UWP.Views.MessagingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AzureIoT.UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:converters="using:AzureIoT.UWP.Converters"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MessagingViewModel}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <converters:BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Send message using Azure IoT Hub:" Margin="10" FontSize="18" HorizontalAlignment="Center"/>
+            <TextBox BorderBrush="#66FFFFFF" Text="{Binding MessageContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Grid>
+                <Button x:Name="SendMessageButton" Content="SEND"
+                HorizontalAlignment="Center" Padding="5" Command="{Binding SendMessageAsyncCommand}"
+                Margin="10" FontFamily="Segoe Ui" FontSize="14" FontWeight="Bold" Background="#FF1A1C2B"
+                Foreground="White" BorderBrush="#FFA2A2A2"
+                Visibility="{Binding Path=IsSendMessageEnabled, Converter={StaticResource BoolToVisibility}}"/>
+                <ProgressRing IsActive="{Binding IsLoading}" Width="20" Height="20" Foreground="White"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

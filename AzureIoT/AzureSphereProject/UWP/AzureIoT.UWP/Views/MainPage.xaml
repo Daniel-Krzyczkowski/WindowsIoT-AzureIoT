@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="AzureIoT.UWP.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AzureIoT.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}">
+    <Grid>
+        <NavigationView x:Name="nvSample" ItemInvoked="OnNavigationViewItemInvoked" FontFamily="Segoe UI">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Temperature" Tag="TemperaturePage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE9CA;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Humidity" Tag="HumidityPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEA91;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Messages" Tag="MessagingPage" Icon="Message">
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <Frame x:Name="rootFrame" Background="#FF1A1C2B">
+                <Image HorizontalAlignment="Center"
+                       VerticalAlignment="Stretch" Source="/Assets/cloudy_of_things_logo.png"
+                       Stretch="Uniform"/>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Page>

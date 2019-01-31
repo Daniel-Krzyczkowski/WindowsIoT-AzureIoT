@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Azure.Devices" Version="1.17.2" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AzureIoT.WebAPI.Data\AzureIoT.WebAPI.Data.csproj" />
+    <ProjectReference Include="..\AzureIoT.WebAPI.Resources\AzureIoT.WebAPI.Resources.csproj" />
+  </ItemGroup>
+
+</Project>

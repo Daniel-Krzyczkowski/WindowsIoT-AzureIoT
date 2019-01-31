@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AzureIoT.AzureSphere.TempHumidity", "AzureIoT.AzureSphere.TempHumidity\AzureIoT.AzureSphere.TempHumidity.vcxproj", "{10CEEB49-B8FB-4A47-9796-9AC138799F9E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MT3620_Grove_Shield_Library", "MT3620_Grove_Shield_Library\MT3620_Grove_Shield_Library.vcxproj", "{A4F0A16D-B28D-4249-9B0A-EEEC5090F21D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Azure.IoT.AzureSphere.OLED", "Azure.IoT.AzureSphere.OLED\Azure.IoT.AzureSphere.OLED.vcxproj", "{5A9316E5-317D-4C5D-9769-87659674C76D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10CEEB49-B8FB-4A47-9796-9AC138799F9E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{10CEEB49-B8FB-4A47-9796-9AC138799F9E}.Debug|ARM.Build.0 = Debug|ARM
+		{10CEEB49-B8FB-4A47-9796-9AC138799F9E}.Release|ARM.ActiveCfg = Release|ARM
+		{10CEEB49-B8FB-4A47-9796-9AC138799F9E}.Release|ARM.Build.0 = Release|ARM
+		{A4F0A16D-B28D-4249-9B0A-EEEC5090F21D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A4F0A16D-B28D-4249-9B0A-EEEC5090F21D}.Debug|ARM.Build.0 = Debug|ARM
+		{A4F0A16D-B28D-4249-9B0A-EEEC5090F21D}.Release|ARM.ActiveCfg = Release|ARM
+		{A4F0A16D-B28D-4249-9B0A-EEEC5090F21D}.Release|ARM.Build.0 = Release|ARM
+		{5A9316E5-317D-4C5D-9769-87659674C76D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{5A9316E5-317D-4C5D-9769-87659674C76D}.Debug|ARM.Build.0 = Debug|ARM
+		{5A9316E5-317D-4C5D-9769-87659674C76D}.Release|ARM.ActiveCfg = Release|ARM
+		{5A9316E5-317D-4C5D-9769-87659674C76D}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E625C61-0EC3-4346-A023-F28E041E999C}
+	EndGlobalSection
+EndGlobal
