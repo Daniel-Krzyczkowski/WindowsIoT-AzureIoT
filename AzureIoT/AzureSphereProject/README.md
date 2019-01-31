@@ -1,7 +1,7 @@
 # Micrososft Azure Sphere connected with Azure cloud services
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsAuthor.png?raw=true" alt="Windows IoT Core samples repository"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsAuthor.png?raw=true" alt="Windows IoT Core samples repository"/>
 </p>
 
 **TL;DR** 
@@ -18,7 +18,7 @@ In this article you can find my latest project in which I used Microsoft Azure c
 ## Project structure and architecture
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsArchitecture.png?raw=true" alt="Solution architecture"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsArchitecture.png?raw=true" alt="Solution architecture"/>
 </p>
 
 Above diagram presents the whole solution. There is Microsoft Azure Sphere device used with sensors and OLED screen connected. This device communicates with Azure IoT Hub and sends temperature and humidity data in the specific time intervals. Once Azure IoT Hub receives message, Azure Function App is triggered (each time some data is sent to the IoT Hub). Azure Function App is responsible for preparing received data and exporting it to the Azure Table Storage.
@@ -34,7 +34,7 @@ Below you can read about implementation details for each architecture component.
 ### Microsoft Azure Sphere
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/AzureSphere.png?raw=true" alt="Azure Sphere Board"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/AzureSphere.png?raw=true" alt="Azure Sphere Board"/>
 </p>
 
 Microsoft Azure Sphere provides product manufacturers with a chance to create secured, internet-connected devices that can be controlled, updated, monitored and maintained remotely. This is not only the board. This is whole solution for creating highly secured, connected Microcontroller (MCU) devices. You can read more about Azure Sphere specification in my article [here](https://predica.pl/blog/azure-sphere-iot/.)
@@ -119,7 +119,7 @@ Below are some helpful links how to start with Azure IoT Hub and how to configur
 Azure Function App was created to capture data sent to the Azure IoT Hub. In this specific case I used "Event Hub Trigger C#" template which enables capturing data once something is sent to the IoT Hub. 
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsFA1.png?raw=true" alt="Cloudy of Things Azure Function App"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsFA1.png?raw=true" alt="Cloudy of Things Azure Function App"/>
 </p>
 
 Once data is received by the Function App it is prepared to be stored in the Azure Storage Table. Here is code fragment of that function (of course whole source code of this project is available in the repository here):
@@ -144,7 +144,7 @@ I decided to use cheaper option in this case to store sensors data - Azure Table
 I created two tables, one for temperature data and one for the humidity data. Here is the sample how temperature data is stored:
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsTS1.PNG?raw=true" alt="Cloudy of Things Table Storage"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsTS1.PNG?raw=true" alt="Cloudy of Things Table Storage"/>
 </p>
 
 
@@ -215,7 +215,7 @@ Read more here: [Tutorial: Use Azure Key Vault with an Azure web app in .NET](ht
 ### Azure Application Insights
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsAI1.PNG?raw=true" alt="Cloudy of Things Application Insights"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsAI1.PNG?raw=true" alt="Cloudy of Things Application Insights"/>
 </p>
 
 Application Insights is an extensible Application Performance Management (APM) service for web developers on multiple platforms. It includes powerful analytics tools to help you diagnose issues and to understand what users actually do with your application. I connected the Azure Application Insights with Azure Web App where Web API is hosted. Now I can monitor performance and review the requests sent to and from the Web API.
@@ -236,7 +236,7 @@ Web API and UWP applications are secured by Azure AD B2C in this project.
 Azure Key Vault is dedicated place to store any vulnerable data like passwords and connection strings.
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsKV1.PNG?raw=true" alt="Cloudy of Things Key Vault"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsKV1.PNG?raw=true" alt="Cloudy of Things Key Vault"/>
 </p>
 
 [You can read more about Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/key-vault-overview)
@@ -245,11 +245,11 @@ Azure Key Vault is dedicated place to store any vulnerable data like passwords a
 ### Universal Windows 10 Platform App
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsUWP3.png?raw=true" alt="Cloudy of Things UWP app"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsUWP3.png?raw=true" alt="Cloudy of Things UWP app"/>
 </p>
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsUWP2.png?raw=true" alt="Cloudy of Things UWP app"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsUWP2.png?raw=true" alt="Cloudy of Things UWP app"/>
 </p>
 
 Universal Windows Platform application was created to display sensors data and to enable sending messages to the Azure Sphere device. As you can see on the screens there is temperature and humidity data visualisation and also place to send text message wchich will be displayed on the OLED screen at the end. Here is the code fragment of "SensorsDataService" which is responsible for pulling temperature and humidity data from the Web API:
@@ -272,7 +272,7 @@ public async Task<IEnumerable<SensorData>> GetData(SensorDataType dataType)
 ```
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsUWP1.png?raw=true" alt="Cloudy of Things UWP app"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsUWP1.png?raw=true" alt="Cloudy of Things UWP app"/>
 </p>
 
 UWP application is secured by Azure Active Directory B2C. You have to login first and then access to the Web API is granted. "AuthenticationService" is responsible for the login process. Here is the code fragment:
@@ -312,13 +312,13 @@ UWP application is secured by Azure Active Directory B2C. You have to login firs
 In this section I would like to present final effect of my project:
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsFinal1.JPG?raw=true" alt="Cloudy of Things Final Project"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsFinal1.JPG?raw=true" alt="Cloudy of Things Final Project"/>
 </p>
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsUWP3.png?raw=true" alt="Cloudy of Things UWP app"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsUWP3.png?raw=true" alt="Cloudy of Things UWP app"/>
 </p>
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/CloudyOfThings/blob/master/Assets/CloudyOfThingsFinal2.JPG?raw=true" alt="Cloudy of Things Final Project"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsFinal2.JPG?raw=true" alt="Cloudy of Things Final Project"/>
 </p>
