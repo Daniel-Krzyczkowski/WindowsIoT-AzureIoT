@@ -19,7 +19,7 @@ In this article you can find my latest project in which I connected Azure Sphere
 ## Project structure and architecture
 
 <p align="center">
-<img src="/images/cloudyofthings/article6/assets/IoTCentralWithAzureSphere2.png?raw=true" alt="Solution architecture"/>
+<img src="/Assets/IoTCentralWithAzureSphere2.png?raw=true" alt="Solution architecture"/>
 </p>
 
 Above diagram presents the whole solution. As you can see it is simple - Azure Sphere IoT device is directly connected to the Azure IoT Central. This is huge advantage because we do not have to create complex architecture.
