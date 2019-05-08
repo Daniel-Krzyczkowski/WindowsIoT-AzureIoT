@@ -1,9 +1,7 @@
-﻿---
-title: "Azure Sphere Device Connected To Azure IoT Central"
----
+﻿# Azure Sphere Device Connected To Azure IoT Central
 
 <p align="center">
-<img src="/images/cloudyofthings/article6/assets/IoTCentralWithAzureSphere1.PNG?raw=true" alt="Azure Sphere Device Connected To Azure IoT Central"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureSphereProject/Assets/CloudyOfThingsAuthor.png?raw=true" alt="Windows IoT Core samples repository"/>
 </p>
 
 **TL;DR** 
