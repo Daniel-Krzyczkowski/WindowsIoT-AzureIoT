@@ -129,20 +129,20 @@ public class ConfRoomInformation
 #### Configuration of the Azure Logic App connected with Cognitive Services to detect people in the uploaded picture
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice9.png?raw=true" alt="Image not found"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice9.PNG?raw=true" alt="Image not found"/>
 </p>
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice10.png?raw=true" alt="Image not found"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice10.PNG?raw=true" alt="Image not found"/>
 </p>
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice11.png?raw=true" alt="Image not found"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice11.PNG?raw=true" alt="Image not found"/>
 </p>
 
 #### Configuration of the Azure Logic App to post messages to the Microsoft Teams channel once IoT button is clicked
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice12.png?raw=true" alt="Image not found"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice12.PNG?raw=true" alt="Image not found"/>
 </p>
 
