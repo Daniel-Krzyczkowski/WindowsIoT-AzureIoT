@@ -4,6 +4,6 @@
 
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/Daniel-Krzyczkowski/Pluralsight/master/CarsIsland/images/cars-island-azure-devops-dashboard.png?raw=true" alt="Image not found"/>
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOfficeArchitecture.png?raw=true" alt="Image not found"/>
 </p>
 
