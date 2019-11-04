@@ -12,10 +12,6 @@
 </p>
 
 <p align="center">
-<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice2.png?raw=true" alt="Image not found"/>
-</p>
-
-<p align="center">
 <img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice3.png?raw=true" alt="Image not found"/>
 </p>
 
@@ -37,4 +33,8 @@
 
 <p align="center">
 <img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice8.png?raw=true" alt="Image not found"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/Daniel-Krzyczkowski/WindowsIoT-AzureIoT/blob/master/AzureIoT/AzureDigitalTwins/images/SmartOffice2.png?raw=true" alt="Image not found"/>
 </p>
