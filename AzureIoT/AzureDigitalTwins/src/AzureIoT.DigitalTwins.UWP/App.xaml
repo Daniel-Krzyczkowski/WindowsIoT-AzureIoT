@@ -1,0 +1,10 @@
+﻿<Application
+    x:Class="AzureIoT.DigitalTwins.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModels="using:AzureIoT.DigitalTwins.Core.ViewModel"
+    xmlns:local="using:AzureIoT.DigitalTwins.UWP">
+    <Application.Resources>
+        <viewModels:ViewModelLocator x:Key="ViewModelLocator" />
+    </Application.Resources>
+</Application>

@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="AzureIoT.DigitalTwins.UWP.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:media="using:Microsoft.UI.Xaml.Media"
+    xmlns:local="using:AzureIoT.DigitalTwins.UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <media:AcrylicBrush x:Key="CustomAcrylicBrush" BackgroundSource="Backdrop"
+         TintOpacity="0.1" TintColor="#FF1A1C2B" FallbackColor="White" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <NavigationView x:Name="nvSample" ItemInvoked="OnNavigationViewItemInvoked" FontFamily="Segoe UI">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Space Configuration" Tag="SpacesConfigurationPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8A1;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Level 0 Space Management" Tag="Level0SpaceManagementPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#59407;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Level 2 Space Management" Tag="Level2SpaceManagementPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#59407;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+            </NavigationView.MenuItems>
+            <Frame x:Name="rootFrame" Background="White">
+                <Image HorizontalAlignment="Center"
+                       VerticalAlignment="Center" Source="/Assets/predica_logo.png"
+                       Stretch="None"/>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Page>

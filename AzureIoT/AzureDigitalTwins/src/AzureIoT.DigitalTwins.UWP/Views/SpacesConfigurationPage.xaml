@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="AzureIoT.DigitalTwins.UWP.Views.SpacesConfigurationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:AzureIoT.DigitalTwins.UWP.Converters"
+    xmlns:local="using:AzureIoT.DigitalTwins.UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=SpaceConfigurationViewModel}"
+    Background="#292D46">
+    <Page.Resources>
+        <ResourceDictionary>
+            <converters:BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="429*"/>
+            <RowDefinition Height="71*"/>
+        </Grid.RowDefinitions>
+        <TextBox Text="{Binding ConfigurationResult}"
+                 Grid.Row="0" HorizontalAlignment="Stretch" Margin="10" TextWrapping="Wrap"
+                 Visibility="{Binding Path=IsConfigurationEnabled, Converter={StaticResource BoolToVisibility}}"/>
+        <ProgressRing IsActive="{Binding IsLoading}" Grid.Row="1" Width="70" Height="70" Foreground="White"/>
+        <Button x:Name="UploadSpaceDefinitionButton" Content="UPLOAD SPACE DEFINITION" Width="400" Height="70"
+                HorizontalAlignment="Center" Padding="5" Command="{Binding UploadSpaceDefinitionAsyncCommand}"
+                Margin="5" FontFamily="Segoe Ui" FontSize="20" FontWeight="Bold" Background="#F05251" Foreground="White" BorderBrush="#FFA2A2A2" Grid.Row="1"/>
+    </Grid>
+</Page>

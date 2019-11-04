@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="AzureIoT.DigitalTwins.UWP.Views.Level2SpaceManagementPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AzureIoT.DigitalTwins.UWP.Views"
+    xmlns:converters="using:AzureIoT.DigitalTwins.UWP.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=Level2SpaceManagementViewModel}"
+    Background="#292D46">
+    <Page.Resources>
+        <ResourceDictionary>
+            <converters:BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Padding="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="751*"/>
+                <RowDefinition Height="249*"/>
+            </Grid.RowDefinitions>
+            <ProgressRing IsActive="{Binding IsLoading}" Width="70" Height="70" Foreground="White" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <Button x:Name="UploadSpaceDefinitionButton" Content="GET SPACE DETAILS" Width="400" Height="70"
+                HorizontalAlignment="Center" Padding="5" Command="{Binding GetSpaceDetailsAsyncCommand}"
+                FontFamily="Segoe Ui" FontSize="20" FontWeight="Bold" Background="#F05251" Foreground="White"
+                BorderBrush="#FFA2A2A2" Grid.Row="2" Grid.ColumnSpan="2"
+                Visibility="{Binding Path=IsGetDetailsEnabled, Converter={StaticResource BoolToVisibility}}"/>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Space details:" Foreground="White" FontSize="32" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SpaceDetails}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Foreground="White" TextWrapping="Wrap"  Margin="10, 20, 0, 0" FontSize="16"/>
+            </StackPanel>
+            <Image Source="/Assets/level2_mapping.PNG" Stretch="Uniform" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="1" Margin="10"/>
+        </Grid>
+    </Grid>
+</Page>

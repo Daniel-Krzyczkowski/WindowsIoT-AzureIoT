@@ -1,0 +1,51 @@
+- name: Predica Office
+  type: Venue
+  resources:
+  - type: IoTHub
+  spaces:
+  - name: Floor 0
+    type: Floor
+    spaces:
+    - name: ALT2-L0-BIG
+      type: ConferenceRoom
+      devices:
+      - name: MxChipDevice-ALT2-L0-BIG
+        hardwareId: MxChipDevice-01-ALT2-L0-BIG
+        sensors:
+        - dataType: Temperature
+          hardwareId: MxChipDevice-01-ALT2-L0-BIG_SENSOR_TEMPERATURE
+      matchers:
+      - name: Matcher-Temperature_ALT2-L0-BIG
+        dataTypeValue: Temperature
+      userdefinedfunctions:
+      - name: Temperature Processor ALT2-L0-BIG
+        matcherNames:
+        - Matcher-Temperature_ALT2-L0-BIG
+        script: actions/userDefinedFunctions/availability.js
+      roleassignments:
+      - roleId: 98e44ad7-28d4-4007-853b-b9968ad132d1 # System Role: SpaceAdministrator
+        objectName: Temperature Processor ALT2-L0-BIG
+        objectIdType: UserDefinedFunctionId
+  - name: Floor 2
+    type: Floor
+    spaces:
+    - name: ALT2-L2-MEDIUM-VIDEO
+      type: ConferenceRoom
+      devices:
+      - name: MxChipDevice-01-ALT2-L2-MEDIUM-VIDEO
+        hardwareId: MxChipDevice-01-ALT2-L2-MEDIUM-VIDEO
+        sensors:
+        - dataType: Temperature
+          hardwareId: MxChipDevice-01-ALT2-L2-MEDIUM-VIDEO_SENSOR_TEMPERATURE
+      matchers:
+      - name: Matcher-Temperature_ALT2-L2-MEDIUM-VIDEO
+        dataTypeValue: Temperature
+      userdefinedfunctions:
+      - name: Temperature-Processor-ALT2-L2-MEDIUM-VIDEO
+        matcherNames:
+        - Matcher-Temperature_ALT2-L2-MEDIUM-VIDEO
+        script: actions/userDefinedFunctions/availability.js
+      roleassignments:
+      - roleId: 98e44ad7-28d4-4007-853b-b9968ad132d1 # System Role: SpaceAdministrator
+        objectName: Temperature-Processor-ALT2-L2-MEDIUM-VIDEO
+        objectIdType: UserDefinedFunctionId
